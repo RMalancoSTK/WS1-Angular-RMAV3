@@ -5,9 +5,23 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { UnicornsComponent } from './entities/unicorns/unicorns.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'welcome', component: WelcomeComponent },
-  { path: 'unicorns', component: UnicornsComponent },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'welcome',
+    loadChildren: () =>
+      import('./pages/welcome/welcome.module').then((m) => m.WelcomeModule),
+  },
+  {
+    path: 'unicorns',
+    loadChildren: () =>
+      import('./entities/unicorns/unicorns.module').then(
+        (m) => m.UnicornsModule
+      ),
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];

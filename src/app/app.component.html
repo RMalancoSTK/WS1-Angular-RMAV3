@@ -1,14 +1,11 @@
 <h1>
   Welcome to {{ title }}!
 </h1>
-<!-- Menu de navigation -->
 
 <nav>
-  <ul>
-    <li><a routerLink="/login">Login</a></li>
-    <li><a routerLink="/welcome">Welcome</a></li>
-    <li><a routerLink="/unicorns">Unicorns</a></li>
-  </ul>
+  <a routerLink="/welcome" routerLinkActive="active">Welcome</a>
+  <a routerLink="/login" routerLinkActive="active">Login</a>
+  <a routerLink="/unicorns" routerLinkActive="active">Unicorns</a>
 </nav>
 
 <router-outlet></router-outlet>
