@@ -5,3 +5,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.button {
+  margin: 8px;
+  min-width: 64px;
+}
+
+button {
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 8px 16px;
+  min-width: 64px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
