@@ -10,12 +10,11 @@
   </ul>
 </nav> -->
 
-<mat-toolbar>
+<!-- <mat-toolbar>
   <div class="toolbar-container">
     <div class="toolbar-left">
       <img src="https://angular.io/assets/images/logos/angular/angular.svg" style="width: 50px; height: 50px;"
         alt="logoAngular">
-      <!-- que el boton abarque todo el espacio del toolbar -->
       <button routerLink="/welcome" mat-icon-button>
         <mat-icon>home</mat-icon>
       </button>
@@ -27,8 +26,18 @@
       </button>
     </div>
   </div>
-</mat-toolbar>
+</mat-toolbar> -->
 
-
+<p>
+  <mat-toolbar>
+    <img src="https://angular.io/assets/images/logos/angular/angular.svg" style="width: 50px; height: 50px;"
+      alt="logoAngular">
+    <span>{{ title }}</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/welcome">Welcome</button>
+    <button mat-button routerLink="/unicorns">Unicorns</button>
+    <button mat-button routerLink="/login">Login</button>
+  </mat-toolbar>
+</p>
 
 <router-outlet></router-outlet>
