@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppConstants } from 'src/app/app.constants';
 
@@ -14,15 +14,19 @@ export class UnicornsService {
 
   getUnicorns(): Observable<HttpResponse<any[]>> {
     return this.http.get<any[]>(
-      this.resourceUrl + '/' + this.resourceID + '/unicorns',
-      { observe: 'response' }
+      `${this.resourceUrl}/${this.resourceID}/unicorns`,
+      {
+        observe: 'response',
+      }
     );
   }
 
-  getUnicorn(id: string | null): Observable<HttpResponse<any>> {
+  getUnicorn(id: string): Observable<HttpResponse<any>> {
     return this.http.get<any>(
-      this.resourceUrl + '/' + this.resourceID + '/unicorns/' + id,
-      { observe: 'response' }
+      `${this.resourceUrl}/${this.resourceID}/unicorns/${id}`,
+      {
+        observe: 'response',
+      }
     );
   }
 
@@ -31,9 +35,12 @@ export class UnicornsService {
       'Content-Type': 'application/json',
     });
     return this.http.post<any>(
-      this.resourceUrl + '/' + this.resourceID + '/unicorns',
+      `${this.resourceUrl}/${this.resourceID}/unicorns`,
       unicorn,
-      { headers: httpHeaders, observe: 'response' }
+      {
+        headers: httpHeaders,
+        observe: 'response',
+      }
     );
   }
 
@@ -41,18 +48,23 @@ export class UnicornsService {
     let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    delete unicorn.id;
+    delete unicorn._id;
     return this.http.put<any>(
-      this.resourceUrl + '/' + this.resourceID + '/unicorns/' + id,
+      `${this.resourceUrl}/${this.resourceID}/unicorns/${id}`,
       unicorn,
-      { headers: httpHeaders, observe: 'response' }
+      {
+        headers: httpHeaders,
+        observe: 'response',
+      }
     );
   }
 
-  deleteUnicorn(id: string | null): Observable<HttpResponse<any>> {
+  deleteUnicorn(id: string): Observable<HttpResponse<any>> {
     return this.http.delete<any>(
-      this.resourceUrl + '/' + this.resourceID + '/unicorns/' + id,
-      { observe: 'response' }
+      `${this.resourceUrl}/${this.resourceID}/unicorns/${id}`,
+      {
+        observe: 'response',
+      }
     );
   }
 }
