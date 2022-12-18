@@ -16,6 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     MatSidenavModule,
     MatExpansionModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,3 +1,4 @@
+import { Data } from './../../interfaces/data';
 import { Component } from '@angular/core';
 import { WelcomeService } from './welcome.service';
 
@@ -7,14 +8,13 @@ import { WelcomeService } from './welcome.service';
 })
 export class WelcomeComponent {
   constructor(private welcomeService: WelcomeService) {}
-
-  longText = ``;
+  resultados: Data[] = [];
+  longText!: string;
 
   ngOnInit(): void {
     this.welcomeService.getData().subscribe((data) => {
-      if (data.my_data) {
-        console.log(data.my_data);
-      }
+      this.resultados = data.my_data;
+      this.longText = `Mi nombre es ${this.resultados[0].name}, Mi IS es ${this.resultados[0].is}. Tengo ${this.resultados[0].age} años y soy de ${this.resultados[0].city}, ${this.resultados[0].state}`;
     });
   }
 }
